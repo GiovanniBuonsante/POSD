@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = isset($_POST['link']) ? $_POST['link'] : null; // Aggiunto il campo link
 
     $stmt = $conn->prepare("INSERT INTO notifications (title, message, link) VALUES (?, ?, ?)");
+    if ($stmt === false) {
+        die("Errore nella preparazione dello statement: " . htmlspecialchars($conn->error));
+    }
     $stmt->bind_param("sss", $title, $message, $link);
 
     if ($stmt->execute()) {
