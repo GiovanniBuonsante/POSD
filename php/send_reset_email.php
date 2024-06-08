@@ -16,7 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         // Genera un token di reset e una data di scadenza
-        $token = bin2hex(random_bytes(50));
+       if (function_exists('random_bytes')) {
+   		 $token = bin2hex(random_bytes(50));
+	} else {
+    		$token = bin2hex(openssl_random_pseudo_bytes(50));
+	}
         $expires = date("Y-m-d H:i:s", strtotime('+1 hour'));
 
         // Salva il token e la data di scadenza nel database
