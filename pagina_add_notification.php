@@ -8,7 +8,7 @@ $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 //    header("Location: /index.php");
 //    exit();
 //}
-
+global $conn;
 include './php/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
