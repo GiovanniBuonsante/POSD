@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: /index.php");
     exit();
 }
-
+global $conn;
 include 'database.php';
 
 // Ottieni i dati dell'utente dalla sessione
@@ -92,4 +92,3 @@ if ($stmt->num_rows > 0) {
 }
 $stmt->close();
 $conn->close();
-?>
