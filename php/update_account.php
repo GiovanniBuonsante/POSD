@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: /index.php");
     exit();
 }
-
+global $conn;
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -94,4 +94,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-?>
