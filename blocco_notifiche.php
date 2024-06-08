@@ -10,6 +10,7 @@
         
         <div class="containerNotification" style="margin: 30px 20px;  height: auto;">
             <?php
+            global $conn;
             include './php/database.php';
             $notifications = [];
             $stmt = $conn->prepare("SELECT title, message, created_at, link FROM notifications ORDER BY created_at DESC");
