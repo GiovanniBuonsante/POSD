@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
+global $conn;
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -67,4 +68,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Reindirizza alla home page dopo 2 secondi
             header("refresh:2;http://posd.altervista.org");
 }
-?>
