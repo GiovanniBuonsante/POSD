@@ -1,3 +1,8 @@
+<?php
+// Recupera le informazioni dell'utente dalla sessione
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Username non disponibile';
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : 'Email non disponibile';
+?>
 <section class="navigation">
       <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
       <nav class="nav-container">
