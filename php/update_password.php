@@ -1,4 +1,5 @@
 <?php
+global $conn;
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -91,4 +92,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Richiesta non valida.";
 }
-?>
