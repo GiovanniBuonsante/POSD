@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("refresh:2;http://posd.altervista.org");
     exit();
 }
-
+global $conn;
 include 'database.php';
 
 $user_id = $_SESSION['user_id'];
@@ -39,4 +39,3 @@ $_SESSION['email'] = $email;
 // Reindirizzamento alla pagina HTML
 header("Location: /index.php");
 exit();
-?>
