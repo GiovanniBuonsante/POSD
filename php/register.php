@@ -1,5 +1,6 @@
 <?php
 // register.php
+global $conn;
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -90,4 +91,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-?>
