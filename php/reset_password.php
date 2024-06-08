@@ -1,4 +1,5 @@
 <?php
+global $conn;
 include 'database.php';
 
 if (isset($_GET['token'])) {
@@ -169,4 +170,3 @@ if (isset($_GET['token'])) {
             </html>';
             header("refresh:2;http://posd.altervista.org");
 }
-?>
